@@ -3,6 +3,11 @@ import streamlit as st
 from dotenv import load_dotenv
 from crewai import Crew, Process
 from tasks.hr_tasks import HRTasks
+import chromadb  # Make sure chromadb is imported
+
+# Ensure database is stored properly
+DB_PATH = "data/chromadb_data"
+chroma_client = chromadb.PersistentClient(path=DB_PATH)
 
 # Load environment variables
 load_dotenv()
